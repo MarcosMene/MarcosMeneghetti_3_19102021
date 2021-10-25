@@ -36,7 +36,8 @@ body {
 }
 .dishes-hero-img img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .btn {
@@ -404,7 +405,8 @@ body {
 }
 .restaurants .rest-dishes__card img {
   height: 150px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
@@ -461,6 +463,4 @@ body {
 .nav-footer__item i {
   margin-right: 10px;
   font-size: 15px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=main.css.map */
