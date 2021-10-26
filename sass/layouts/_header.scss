@@ -1,0 +1,32 @@
+/* HEADER*/
+
+.header-top {
+    background-color: #fffffd;
+
+    padding: 20px 0;
+    position: relative;
+
+    &--shadow {
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        // box-shadow: 0px 2px 5px 0px grey;
+        @include header-shadow;
+    }
+
+    & a {
+        position: absolute;
+        top: 50%;
+        left: 25px;
+        transform: translateY(-50%);
+        color: black;
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}
+
+.header-top img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+/* END HEADER*/

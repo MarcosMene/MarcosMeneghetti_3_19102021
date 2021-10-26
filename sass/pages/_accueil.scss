@@ -1,0 +1,169 @@
+/* FUNCTIONING*/
+.functioning {
+    padding: 40px 20px;
+
+    & h2 {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+
+    & .func-dishes__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+.func-dishes__card {
+    background-color: #f7f7f4;
+    border-radius: 25px;
+    margin: 20px 0px 0;
+    width: 98%;
+    margin-left: 10px;
+    position: relative;
+    box-shadow: 0px 2px 10px 0px #d8d8d8;
+    transition: background-color 400ms;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+        background-color: lighten($color-primary, 33%);
+        box-shadow: 0px 2px 12px 0px #cccccc;
+
+        .func-dishes__card__icon {
+            color: $color-primary;
+        }
+        .func-dishes__card__number {
+            left: 5px;
+        }
+    }
+
+    & a {
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__number {
+        position: absolute;
+        background-color: $color-primary;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        left: 0;
+        top: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        color: #ffff;
+        transition: all 0.5s ease;
+
+        & p {
+            font-size: 12px;
+        }
+    }
+
+    &__icon {
+        width: 10px;
+        font-size: 16px;
+        margin: 0 25px 0 10px;
+        color: #898989;
+    }
+
+    & h3 {
+        font-size: 14px;
+        color: black;
+        display: block;
+    }
+}
+
+/* END FUNCTIONING*/
+
+/*RESTAURANTS */
+.restaurants {
+    background-color: #f7f7f4;
+    padding: 40px 20px;
+
+    & h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    & .rest-dishes__cards {
+        margin-bottom: 30px;
+    }
+    .rest-dishes__card {
+        margin-bottom: 20px;
+        position: relative;
+        @include cards-shadow;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        transition: all 1s;
+
+        & {
+            &:hover {
+                @include cards-shadow-hover;
+                cursor: pointer;
+
+                img {
+                    transform: scale(1.1);
+                    filter: grayscale(0);
+                }
+            }
+        }
+
+        &__img {
+            overflow: hidden;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+
+        &__new {
+            background-color: $color-terciary;
+            position: absolute;
+            padding: 6px 15px;
+            border-radius: 3px;
+            top: 15px;
+            right: 15px;
+            color: darken($color: $color-terciary, $amount: 40%);
+            font-weight: bold;
+            font-size: 13px;
+            z-index: 1;
+        }
+
+        & img {
+            height: 150px;
+            object-fit: cover;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+
+            transform: scale(1);
+            filter: grayscale(1);
+
+            transition: filter 1s ease, transform 0.6s ease;
+        }
+        &__info {
+            background-color: #ffffff;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            color: black;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__txt {
+            h3,
+            p {
+                margin-bottom: 5px;
+                font-size: 17px;
+            }
+        }
+    }
+}
+/* END RESTAURANTS */
