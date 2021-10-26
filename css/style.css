@@ -490,6 +490,13 @@ body {
   justify-content: flex-start;
   flex-direction: column;
 }
+@media screen and (min-width: 576px) {
+  .footer .container {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
 .footer h4 {
   font-family: "Shrikhand", cursive;
   font-weight: 100;
@@ -499,6 +506,19 @@ body {
   margin-top: 20px;
 }
 
+.nav-footer__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 576px) {
+  .nav-footer__list {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
 .nav-footer__item {
   color: white;
   padding: 5px 0px;
@@ -508,6 +528,7 @@ body {
   font-size: 16px;
   padding: 5px 0px;
   transition: color 400ms;
+  width: 100%;
 }
 .nav-footer__item a:hover {
   color: #4acbab;
@@ -526,13 +547,20 @@ body {
   font-size: 21px;
   margin-bottom: 10px;
 }
-.functioning .func-dishes__cards {
+.functioning .func__cards {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+@media screen and (min-width: 576px) {
+  .functioning .func__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
 
-.func-dishes__card {
+.func__card {
   background-color: #f7f7f4;
   border-radius: 25px;
   margin: 20px 0px 0;
@@ -544,24 +572,34 @@ body {
   cursor: pointer;
   transition: box-shadow 0.5s ease;
 }
-.func-dishes__card:hover {
+@media screen and (min-width: 576px) {
+  .func__card {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .func__card {
+    width: 30%;
+  }
+}
+.func__card:hover {
   background-color: #ece1f9;
   box-shadow: 0px 2px 12px 0px #cccccc;
 }
-.func-dishes__card:hover .func-dishes__card__icon {
+.func__card:hover .func__card__icon {
   color: #9356dc;
 }
-.func-dishes__card:hover .func-dishes__card__number {
+.func__card:hover .func__card__number {
   left: 5px;
 }
-.func-dishes__card a {
+.func__card a {
   padding: 25px 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-.func-dishes__card__number {
+.func__card__number {
   position: absolute;
   background-color: #9356dc;
   width: 20px;
@@ -576,19 +614,20 @@ body {
   color: #ffff;
   transition: all 0.5s ease;
 }
-.func-dishes__card__number p {
+.func__card__number p {
   font-size: 12px;
 }
-.func-dishes__card__icon {
+.func__card__icon {
   width: 10px;
   font-size: 16px;
   margin: 0 25px 0 10px;
   color: #898989;
 }
-.func-dishes__card h3 {
+.func__card h3 {
   font-size: 14px;
   color: black;
   display: block;
+  width: 100%;
 }
 
 /* END FUNCTIONING*/
@@ -603,6 +642,17 @@ body {
 }
 .restaurants .rest-dishes__cards {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+@media screen and (min-width: 576px) {
+  .restaurants .rest-dishes__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
 }
 .restaurants .rest-dishes__card {
   margin-bottom: 20px;
@@ -613,6 +663,11 @@ body {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   transition: all 1s;
+}
+@media screen and (min-width: 576px) {
+  .restaurants .rest-dishes__card {
+    width: 49%;
+  }
 }
 .restaurants .rest-dishes__card:hover {
   box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.6);

@@ -10,6 +10,12 @@
         align-items: flex-start;
         justify-content: flex-start;
         flex-direction: column;
+
+        @include mobile-only {
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
     }
 
     h4 {
@@ -23,16 +29,34 @@
 }
 
 .nav-footer {
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        @include mobile-only {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
     &__item {
         color: white;
         padding: 5px 0px;
-
         width: 100%;
+
+        // @include desktop-only {
+        //     width: inherit;
+        //     margin: 0 20px;
+        // }
 
         a {
             font-size: 16px;
             padding: 5px 0px;
             transition: color 400ms;
+            width: 100%;
             &:hover {
                 color: darken($color-terciary, 20%);
             }

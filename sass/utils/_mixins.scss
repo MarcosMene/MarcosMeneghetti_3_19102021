@@ -23,5 +23,29 @@
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
-    // flex-wrap: $wrap;
+}
+
+// BREAKPOINTS
+
+@mixin mobile-only {
+    @media screen and (min-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+@mixin tablets-only {
+    @media screen and (min-width: map-get($breakpoints, tablets)) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin largerDesktop-only {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
 }
