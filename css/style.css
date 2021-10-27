@@ -636,6 +636,8 @@ body {
   padding: 20px 20px 40px;
   width: 100%;
   min-width: 280px;
+  max-width: 1200px;
+  margin: auto;
 }
 .footer .container {
   display: flex;
@@ -660,7 +662,7 @@ body {
   margin-top: 20px;
   /*media query desktop*/
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
   .footer h4 {
     font-size: 25px;
   }
