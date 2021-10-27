@@ -15,10 +15,27 @@
 
     & h1 {
         font-size: 24px;
+        margin-bottom: 0px;
+        line-height: 1;
+
+        /*media query desktop*/
+        @include desktop-only {
+            font-size: 35px;
+            margin-top: 25px;
+            line-height: 1;
+        }
+
     }
 
     & p {
         color: #898989;
+
+        /*media query desktop*/
+        @include desktop-only {
+            font-size: 20px;
+            line-height: .5;
+            margin-bottom: 40px;
+        }
     }
 }
 

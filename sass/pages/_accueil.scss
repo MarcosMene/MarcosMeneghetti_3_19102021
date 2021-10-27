@@ -12,6 +12,7 @@
         flex-direction: column;
         justify-content: space-evenly;
 
+        /*media query mobile*/
         @include mobile-only {
             flex-direction: row;
             flex-wrap: wrap;
@@ -30,13 +31,20 @@
     box-shadow: 0px 2px 10px 0px #d8d8d8;
     transition: background-color 400ms;
     cursor: pointer;
-    transition: box-shadow 0.5s ease;
+    transition: box-shadow, background-color .5s ease;
 
+    /*media query mobile*/
     @include mobile-only {
         width: 45%;
     }
-    @include tablets-only {
+
+    /*media query desktop*/
+    @include desktop-only {
         width: 30%;
+        margin-left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     &:hover {
@@ -46,8 +54,15 @@
         .func__card__icon {
             color: $color-primary;
         }
+
         .func__card__number {
             left: 5px;
+
+            /*media query desktop*/
+            @include desktop-only {
+                top: -6px;
+                left: 50%;
+            }
         }
     }
 
@@ -57,6 +72,14 @@
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+
+        /*media query desktop*/
+        @include desktop-only {
+            margin: 0;
+            padding: 25px 15px;
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     &__number {
@@ -74,16 +97,38 @@
         color: #ffff;
         transition: all 0.5s ease;
 
+        /*media query desktop*/
+        @include desktop-only {
+            left: 50%;
+            top: 0;
+            width: 22px;
+            height: 22px;
+        }
+
         & p {
-            font-size: 12px;
+            font-size: 14px;
+
+            /*media query desktop*/
+            @include desktop-only {
+                font-size: 15px;
+            }
         }
     }
 
     &__icon {
-        width: 10px;
+        width: 15px;
         font-size: 16px;
-        margin: 0 25px 0 10px;
+        margin: 0 20px 0 10px;
         color: #898989;
+
+        /*media query desktop*/
+        @include desktop-only {
+            margin: 0;
+            margin-right: 25px;
+            font-size: 22px;
+        }
+
+
     }
 
     & h3 {
@@ -91,6 +136,13 @@
         color: black;
         display: block;
         width: 100%;
+
+        /*media query desktop*/
+        @include desktop-only {
+            font-size: 16px;
+        }
+
+
     }
 }
 
@@ -105,12 +157,14 @@
         font-size: 20px;
         margin-bottom: 20px;
     }
+
     & .rest-dishes__cards {
         margin-bottom: 30px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
 
+        /*media query mobile*/
         @include mobile-only {
             flex-direction: row;
             flex-wrap: wrap;
@@ -118,6 +172,7 @@
             width: 100%;
         }
     }
+
     .rest-dishes__card {
         margin-bottom: 20px;
         position: relative;
@@ -128,6 +183,7 @@
         border-bottom-left-radius: 15px;
         transition: all 1s;
 
+        /*media query mobile*/
         @include mobile-only {
             width: 49%;
         }
@@ -168,12 +224,11 @@
             object-fit: cover;
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
-
             transform: scale(1);
             filter: grayscale(1);
-
             transition: filter 1s ease, transform 0.6s ease;
         }
+
         &__info {
             background-color: #ffffff;
             border-bottom-right-radius: 15px;
@@ -186,12 +241,19 @@
         }
 
         &__txt {
+
             h3,
             p {
                 margin-bottom: 5px;
                 font-size: 17px;
+
+                /*media query desktop*/
+                @include desktop-only {
+                    font-size: 19px;
+                }
             }
         }
     }
 }
+
 /* END RESTAURANTS */

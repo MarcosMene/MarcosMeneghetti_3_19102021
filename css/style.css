@@ -25,6 +25,12 @@ a {
   height: 100%;
 }
 
+.center {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
 /* hero dishes*/
 .dishes-hero-img {
   width: 100%;
@@ -72,12 +78,24 @@ body {
   line-height: 20px;
   font-size: 14px;
   z-index: 1;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .btn {
+    font-size: 16px;
+  }
 }
 .btn:hover {
   background-image: linear-gradient(180deg, #ff79da, #9356dc);
   box-shadow: 0px 2px 12px 0px rgba(100, 100, 100, 0.8);
   cursor: pointer;
   font-size: 15px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .btn:hover {
+    font-size: 17px;
+  }
 }
 .btn:hover .btn__bg {
   opacity: 0.2;
@@ -109,7 +127,7 @@ body {
 /* LOADING PAGE*/
 .load-page {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -164,18 +182,20 @@ body {
   position: relative;
 }
 .header-top--shadow {
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 0px 2px 5px 0px rgba(100, 100, 100, 0.8);
 }
 .header-top a {
   position: absolute;
   top: 50%;
-  left: 25px;
+  margin-left: 25px;
   transform: translateY(-50%);
   color: black;
+  transition: font-size 0.5s ease, margin-left 0.5s ease;
 }
 .header-top a:hover {
   color: #9356dc;
+  font-size: 25px;
+  margin-left: 20px;
 }
 
 .header-top img {
@@ -189,6 +209,10 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  /*container full*/
+}
+.container-full {
+  max-width: 10000px;
 }
 
 .cont-show {
@@ -220,9 +244,27 @@ body {
 }
 .hero h1 {
   font-size: 24px;
+  margin-bottom: 0px;
+  line-height: 1;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .hero h1 {
+    font-size: 35px;
+    margin-top: 25px;
+    line-height: 1;
+  }
 }
 .hero p {
   color: #898989;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .hero p {
+    font-size: 20px;
+    line-height: 0.5;
+    margin-bottom: 40px;
+  }
 }
 
 /* END HERO */
@@ -236,15 +278,31 @@ body {
   margin-top: -60px;
   padding: 30px 20px;
   overflow: hidden;
+  /*animation media query desktop*/
 }
 .dishes__title {
   font-family: "Shrikhand", cursive;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__title {
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 .dishes__title h2 {
   font-size: 23px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__title h2 {
+    margin-right: 47%;
+    transform: translateX(47%);
+    font-size: 28px;
+  }
 }
 .dishes__title i {
   margin-right: 10px;
@@ -258,6 +316,21 @@ body {
   position: relative;
   font-size: 13px;
   margin-bottom: 20px;
+  /*media query mobile*/
+  /*media query desktop*/
+}
+@media screen and (min-width: 576px) {
+  .dishes__title--type h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .dishes__title--type h3 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 17px;
+    margin-top: 50px;
+  }
 }
 .dishes__title--type h3::after {
   content: "";
@@ -268,12 +341,45 @@ body {
   top: 100%;
   left: 0;
   margin-top: 5px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__title--type h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+  }
 }
 .dishes .dish {
   opacity: 0;
   position: relative;
   left: -30px;
+  top: 0;
   animation: show-title 1s 0.5s ease forwards;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes .dish {
+    top: -10px;
+    left: 0;
+    animation: show-title-desktop 1s 0.5s ease forwards;
+  }
+}
+@keyframes show-title-desktop {
+  0% {
+    opacity: 0;
+    top: -20px;
+  }
+  30% {
+    top: -20px;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    top: -10px;
+  }
 }
 @keyframes show-title {
   0% {
@@ -294,6 +400,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*media query mobile*/
+}
+@media screen and (min-width: 576px) {
+  .dishes__cards {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 .dishes__cards button {
   margin-top: 40px;
@@ -318,6 +432,18 @@ body {
   overflow: hidden;
   animation: show-dishes 1s ease forwards;
   transition: box-shadow 1s ease;
+  /*media query mobile*/
+  /*media query desktop*/
+}
+@media screen and (min-width: 576px) {
+  .dishes__card {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .dishes__card {
+    width: 32%;
+  }
 }
 .dishes__card:hover {
   box-shadow: 0px 0px 10px 0px rgba(100, 100, 100, 0.6);
@@ -363,13 +489,26 @@ body {
 }
 .dishes__card .dishes__card__text span:not(:last-child) {
   font-size: 15px;
-  margin-bottom: 5px;
+  margin: 5px 0;
   font-weight: bold;
   color: black;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__card .dishes__card__text span:not(:last-child) {
+    font-size: 17px;
+    line-height: 1.8;
+  }
 }
 .dishes__card .dishes__card__text span:last-child {
   font-size: 13px;
   color: #4d4d4d;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__card .dishes__card__text span:last-child {
+    font-size: 16px;
+  }
 }
 .dishes__card .dishes__card__price {
   display: flex;
@@ -380,6 +519,12 @@ body {
   font-size: 13px;
   align-self: flex-end;
   transition: margin-right 600ms;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__card .dishes__card__price {
+    font-size: 15px;
+  }
 }
 .dishes__card .dishes__card__side {
   width: 50px;
@@ -411,6 +556,14 @@ body {
   font-weight: bold;
   transform: rotateZ(45deg);
   transition: transform 600ms;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .dishes__card .dishes__card__side i {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
 }
 .dishes__card:hover .dishes__card__side {
   right: 0px;
@@ -480,7 +633,7 @@ body {
 /*  FOOTER */
 .footer {
   background-color: #363635;
-  padding: 20px;
+  padding: 20px 20px 40px;
   width: 100%;
   min-width: 280px;
 }
@@ -489,6 +642,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  /*media query mobile*/
 }
 @media screen and (min-width: 576px) {
   .footer .container {
@@ -504,6 +658,12 @@ body {
   font-size: 18px;
   margin-bottom: 20px;
   margin-top: 20px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .footer h4 {
+    font-size: 25px;
+  }
 }
 
 .nav-footer__list {
@@ -511,6 +671,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  /*media query mobile*/
 }
 @media screen and (min-width: 576px) {
   .nav-footer__list {
@@ -551,6 +712,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  /*media query mobile*/
 }
 @media screen and (min-width: 576px) {
   .functioning .func__cards {
@@ -570,16 +732,22 @@ body {
   box-shadow: 0px 2px 10px 0px #d8d8d8;
   transition: background-color 400ms;
   cursor: pointer;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow, background-color 0.5s ease;
+  /*media query mobile*/
+  /*media query desktop*/
 }
 @media screen and (min-width: 576px) {
   .func__card {
     width: 45%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .func__card {
     width: 30%;
+    margin-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
 .func__card:hover {
@@ -591,6 +759,13 @@ body {
 }
 .func__card:hover .func__card__number {
   left: 5px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card:hover .func__card__number {
+    top: -6px;
+    left: 50%;
+  }
 }
 .func__card a {
   padding: 25px 20px;
@@ -598,6 +773,15 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card a {
+    margin: 0;
+    padding: 25px 15px;
+    width: 100%;
+    justify-content: center;
+  }
 }
 .func__card__number {
   position: absolute;
@@ -613,21 +797,50 @@ body {
   transform: translate(-50%, -50%);
   color: #ffff;
   transition: all 0.5s ease;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card__number {
+    left: 50%;
+    top: 0;
+    width: 22px;
+    height: 22px;
+  }
 }
 .func__card__number p {
-  font-size: 12px;
+  font-size: 14px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card__number p {
+    font-size: 15px;
+  }
 }
 .func__card__icon {
-  width: 10px;
+  width: 15px;
   font-size: 16px;
-  margin: 0 25px 0 10px;
+  margin: 0 20px 0 10px;
   color: #898989;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card__icon {
+    margin: 0;
+    margin-right: 25px;
+    font-size: 22px;
+  }
 }
 .func__card h3 {
   font-size: 14px;
   color: black;
   display: block;
   width: 100%;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .func__card h3 {
+    font-size: 16px;
+  }
 }
 
 /* END FUNCTIONING*/
@@ -645,6 +858,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  /*media query mobile*/
 }
 @media screen and (min-width: 576px) {
   .restaurants .rest-dishes__cards {
@@ -663,6 +877,7 @@ body {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   transition: all 1s;
+  /*media query mobile*/
 }
 @media screen and (min-width: 576px) {
   .restaurants .rest-dishes__card {
@@ -717,6 +932,13 @@ body {
 .restaurants .rest-dishes__card__txt p {
   margin-bottom: 5px;
   font-size: 17px;
+  /*media query desktop*/
+}
+@media screen and (min-width: 992px) {
+  .restaurants .rest-dishes__card__txt h3,
+.restaurants .rest-dishes__card__txt p {
+    font-size: 19px;
+  }
 }
 
 /* END RESTAURANTS */
