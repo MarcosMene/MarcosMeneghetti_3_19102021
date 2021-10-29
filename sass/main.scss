@@ -2,7 +2,7 @@
 @import "./utils/breakpoints";
 @import "./utils/functions";
 @import "./utils/mixins";
-@import "./utils/extensions";
+
 
 @import "./base/base";
 @import "./base/typography";
@@ -11,7 +11,6 @@
 
 @import "./layouts/loading_page";
 @import "./layouts/header";
-@import "./layouts/nav";
 @import "./layouts/container";
 @import "./layouts/hero";
 @import "./layouts/dishes";
@@ -19,6 +18,3 @@
 @import "./layouts/footer";
 
 @import "./pages/accueil";
-@import "./pages/francaise";
-@import "./pages/enchante";
-@import "./pages/delice";

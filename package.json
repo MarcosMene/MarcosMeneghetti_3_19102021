@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/main.scss:./css/style.css -w --style expanded",
-    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/" 
+    "sass": "sass ./sass/main.scss:./css/style.css -w --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d. ./css/prefixed/" 
   },
   "repository": {
     "type": "git",
